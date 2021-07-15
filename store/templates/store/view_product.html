@@ -1,0 +1,52 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	
+	<div id="content-wrapper">
+		<div class="column">
+			<img id="featured" src="{{product.imageURL}}">
+			</div>
+		</div>
+
+		<div class="column">
+			<h1>{{product}}</h1>
+			<hr>
+			<h3>${{product.price}}</h3>
+
+			<button data-product={{product.id}} data-action="add" class="btn btn-dark add-btn update-cart">Add to Cart</button>
+
+		</div>
+	</div>
+	<!-- <div id="content-wrapper">
+		<div class="column">
+			<form method="POST">
+                {% csrf_token %}
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        {{ form.rating }}
+                    </div>
+                    <div class="control is-expanded">
+                        {{ form.review }}
+                    </div>
+
+                    <div class="control">
+                        <button type="submit" class="button is-info">
+                            Add Review
+                        </button>
+                    </div>
+                </div>
+                {% if message %}
+                    <div class="notification {{ message_class }}">{{ message }}</div>
+                {% endif %}
+            </form>
+            {% for review in reviews %}
+            	<h3>{{ review.rating }}</h3><br>
+				<h3>{{ review.review }}</h3><br>
+			{% endfor %} 
+			
+		</div>
+	</div>-->
+
+{% endblock content %}
+
+		
